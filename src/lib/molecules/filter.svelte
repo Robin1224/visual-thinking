@@ -1,32 +1,40 @@
 <script>
   import { page } from "$app/stores"
-  export let data
+  import { goto } from "$app/navigation"
 
-  let filter = $page.url.searchParams.getAll("categorie") || []
-  function applyFilter() {
-    return function(event) {
+  export let categories
+  let form
+
+  function applyFilter(event) {
       event.preventDefault()
-      const formData = new FormData(event.target)
+      const form = event.target
+      const url = new URL(form.action)
+
+      const formData = new FormData(form)
       const categorie = formData.getAll("categorie")
-      const url = new URL(window.location)
+
       url.searchParams.delete("categorie")
       categorie.forEach((slug) => url.searchParams.append("categorie", slug))
-      window.location = url
-    }
+
+      console.log('CLIENT',url)
+
+      goto(url, { replaceState: true, keepFocus: true, noScroll: true });
   }
+
+  let filter = $page.url.searchParams.getAll("categorie") || []
 </script>
 
 <section>
   <h2 id="methodes">Filter op categorie</h2>
 
-  <form method="GET" action="/tekenmethodes#methodes"  on:submit={applyFilter()}>
-    {#each data.categories as category}
+  <form method="GET" action="/tekenmethodes#methodes" bind:this={form} on:submit|preventDefault={applyFilter}>
+    {#each categories as category}
       <label for={category.slug}>
         <input
           type="checkbox"
           id={category.slug}
           value={category.slug}
-          checked={filter.includes(category.slug)}
+          checked={filter.includes(category.slug)}  
           name="categorie"
           tabindex="0"
         />
@@ -82,3 +90,6 @@ section button:hover {
 
 </style>
 
+<!-- https://github.com/sveltejs/kit/discussions/8499 -->
+<!-- https://github.com/sveltejs/kit/issues/7895 -->
+<!-- +page.js: export const csr = false -->

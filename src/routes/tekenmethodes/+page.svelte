@@ -1,17 +1,18 @@
 <script>
-  import Breadcrumb from "$lib/atoms/breadcrumb.svelte";
-  import Introduction from "$lib/molecules/introduction.svelte";
-  import Filter from "$lib/molecules/filter.svelte";
+  import Breadcrumb from "$lib/atoms/breadcrumb.svelte"
+  import Introduction from "$lib/molecules/introduction.svelte"
+  import Filter from "$lib/molecules/filter.svelte"
+  import Methods from "$lib/organisms/methods.svelte"
 
-  import Methods from "$lib/organisms/methods.svelte";
+  import { getContext } from "svelte"
 
-  export let data;
+  const methodsPage = getContext('methodsPage')
 
-  const {page, methods} = data;
+  const {page, methods, categories} = $methodsPage
 </script>
 
 <Breadcrumb titel="Tekenmethodes" bgc="var(--vtYellow)" />
-<Introduction data={page}/>
+<Introduction {page}/>
 
-<Filter {data} />
-<Methods data={methods}/>
+<Filter {categories} />
+<Methods {methods} />

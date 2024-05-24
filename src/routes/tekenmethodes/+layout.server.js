@@ -1,8 +1,6 @@
 import { gql } from "graphql-request";
 import { hygraph } from "$lib/utils/hygraph.js";
 
-
-
 export async function load({ url }) {
   const categories = url.searchParams.getAll('categorie')
   let filter
@@ -40,8 +38,9 @@ export async function load({ url }) {
     }
   `
 
-  const data = await hygraph.request(query, { categories });
-  return data;
+  const data = await hygraph.request(query, { categories })
+
+  return data
 }
 
   

@@ -1,7 +1,7 @@
 <script>
-  export let data;
+  export let page
 
-  const {title, content} = data
+  const {title, content} = page
 </script>
 
 <header>

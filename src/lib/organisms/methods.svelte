@@ -1,11 +1,12 @@
 <script>
-  export let data;
+  export let methods
+
 </script>
 
 <section class="grid">
-  <h2>Alle methodes <small>({data.length})</small></h2>
-  {#if data && data.length > 0}
-    {#each data as method, index}
+  <h2>Alle methodes <small>({methods.length})</small></h2>
+  {#if methods && methods.length > 0}
+    {#each methods as method, index}
       <article class="methods-container" data-index={index}>
         <a href="/tekenmethodes/{method.slug}">
           {#if method.template && method.template.url}
