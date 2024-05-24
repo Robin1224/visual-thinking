@@ -4,6 +4,7 @@
 
   export let categories
   let form
+  let filter = $page.url.searchParams.getAll("categorie") || []
 
   function applyFilter(event) {
       event.preventDefault()
@@ -18,10 +19,9 @@
 
       console.log('CLIENT',url)
 
-      goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+      goto('/').then(() => goto(url, { replaceState: true, keepFocus: true, noScroll: true }))
   }
 
-  let filter = $page.url.searchParams.getAll("categorie") || []
 </script>
 
 <section>

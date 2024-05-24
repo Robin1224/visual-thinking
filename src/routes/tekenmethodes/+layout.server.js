@@ -2,15 +2,13 @@ import { gql } from "graphql-request";
 import { hygraph } from "$lib/utils/hygraph.js";
 
 export async function load({ url }) {
-  const categories = url.searchParams.getAll('categorie')
-  let filter
+  const selectedCategories = url.searchParams.getAll('categorie')
+  const filter = selectedCategories.length > 0
+    ? `, where: {categories_some: {slug_in: ${JSON.stringify(selectedCategories)}}}`
+    : ''
 
-  categories && categories.length > 0 
-          ? filter = `, where: {categories_some: {slug_in: ${JSON.stringify(categories)}}}` 
-          : filter = ''
-
-  let query = gql`
-    query Methods() {
+  const query = gql`
+    query Methods {
       page(where: { id: "clv89bh0vn4z007unrv85gsw1" }) {
         title
         content {
@@ -38,7 +36,7 @@ export async function load({ url }) {
     }
   `
 
-  const data = await hygraph.request(query, { categories })
+  const data = await hygraph.request(query, { categories: selectedCategories })
 
   return data
 }
