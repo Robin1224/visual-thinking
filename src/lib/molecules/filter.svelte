@@ -1,13 +1,13 @@
 <script>
   import { page } from "$app/stores"
-  import { goto } from "$app/navigation"
+  import { goto, invalidateAll } from "$app/navigation"
 
   export let categories
   let form
   let filter = $page.url.searchParams.getAll("categorie") || []
 
   function applyFilter(event) {
-      event.preventDefault()
+      
       const form = event.target
       const url = new URL(form.action)
 
@@ -17,9 +17,7 @@
       url.searchParams.delete("categorie")
       categorie.forEach((slug) => url.searchParams.append("categorie", slug))
 
-      console.log('CLIENT',url)
-
-      goto('/').then(() => goto(url, { replaceState: true, keepFocus: true, noScroll: true }))
+      goto(url, { replaceState: true, keepFocus: true, noScroll: true })
   }
 
 </script>

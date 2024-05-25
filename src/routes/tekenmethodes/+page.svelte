@@ -15,4 +15,4 @@
 <Introduction {page}/>
 
 <Filter {categories} />
-<Methods {methods} />
+<Methods {methods} /> 
