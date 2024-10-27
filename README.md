@@ -1,31 +1,84 @@
-![image](https://user-images.githubusercontent.com/1061632/191292733-fe7516d2-aaf9-4fc6-bbed-14fbd9d26dd5.png)
+<a id="readme-top"></a>
 
-Tekenen is een manier om simpel en to-the-point te communiceren en wordt in de praktijk steeds vaker gebruikt als tool voor interne en externe communicatie. ‘Visual thinking in het hbo’ wordt een platform met onderwijsmateriaal voor docenten en studenten om visual thinking in hun lessen en tijdens de studie toe te kunnen passen.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Robin1224/visual-thinking">
+    <img src="https://visualthinking.school/images/visual-thinking-hbo-logo.svg" alt="Logo" width="80" height="80">
+  </a>
 
-Aan de hand van verschillende werkvormen, mini-cursussen en kennisclips leren, zowel studenten als docenten, visueel denken en communiceren.
+<h3 align="center">Visual Thinking</h3>
 
-## Design Challenge
-Ontwerp en ontwikkel een platform met werkvormen voor visual thinking in het hoger onderwijs. 
+  <p align="center">
+    A website for the 'Visual Thinking in het HBO' project
+    <br />
+    <a href="https://visualthinking.school/"><strong>Live link »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/orgs/fdnd-agency/projects/7/views/3">Backlog</a>
+    ·
+    <a href="https://github.com/Robin1224/visual-thinking/issues/new">Report Bug</a>
+    ·
+    <a href="https://github.com/Robin1224/visual-thinking?tab=readme-ov-file#getting-started">Run locally</a>
+  </p>
+</div>
 
-## Resources
-[Backlog](https://github.com/orgs/fdnd-agency/projects/7/views/3) 
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-<!--[Sprintplanning Miro Board](https://miro.com/app/board/uXjVPhWkx3k=/?share_link_id=863710582264)-->
+![Page screenshot](https://github.com/user-attachments/assets/f7977b15-b28b-4f85-ae8f-d94299fcb297)
 
-[Headless CMS / API](https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clbe0xfvf2fdq01uj9eme97m7/master)
+A website made for Visual Thinking in het HBO: a platform housing articles and methods created by Charley Muhren to bring visual thinking into the classroom. For students and teachers alike.
 
-[Huisstijl](https://github.com/fdnd-projects/visual-thinking/blob/0bcfc55d8c25483d18e5c6629ad7fa7e99ca7b51/vtHBO-styleguide-v1.pdf)  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[Figma Prototype](https://www.figma.com/proto/BcmZb4clafkTX1UM1GN3F2/Prototype-v3-Visual-Thinking-in-het-HBO?node-id=21%3A995&starting-point-node-id=21%3A995&scaling=scale-down)  
+### Built With
 
-[Kennisclips over Visula Thinking](https://www.youtube.com/playlist?list=PLjrep0WCM97y9fznRYBVVKyDkzlT9fWEa)
+* [![Svelte](https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00)](https://svelte.dev/)
+* [![Hygraph CMS](https://img.shields.io/badge/Hygraph_CMS-101B42?style=for-the-badge&logo=graphql&logoColor=ffffff)](https://hygraph.com/)
 
-## Prototype
-De basis voor het design is gelegd in het prototype van Ivar, Eliza, Marco & Trisjan  
-[Live site](https://vthbo.adaptable.app/) | [GitHub repo](https://github.com/IvarSchuyt/Visual-Thinking) | [Figma Responsive Designs Eliza](https://www.figma.com/file/zM7mZ71HH7qQP1xO2KctIJ/Visual-Thinking---Designs?type=design&node-id=0-1&mode=design&t=Jd4LwSPKL8xpYLjv-0)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Getting Started
 
-## Preferred tech stack
+To get a local copy up and running follow these simple example steps.
 
-Framework: [SvelteKit](https://kit.svelte.dev/)   
-Headless CMS: [Hygraph](https://hygraph.com/)
+### Installation
+
+1. Create an account on Hygraph, and get your endpoint URL & permanent auth token
+2. Clone the repo
+   ```sh
+   git clone https://github.com/Robin1224/visual-thinking.git
+   ```
+3. Create your `.env` file using `example.env` as a guide
+4. Install NPM packages
+   ```sh
+   npm install
+   ```
+5. Change git remote url to avoid accidental pushes to base project
+   ```sh
+   git remote set-url origin github_username/repo_name
+   git remote -v # confirm the changes
+   ```
+6. Run the SvelteKit local development server
+   ```sh
+   npm run dev
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See the `LICENSE` file for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [SvelteKit documentation](https://svelte.dev/docs/kit/introduction)
+* [Hygraph documentation](https://hygraph.com/docs)
+* [Figma prototype by CMD students Ivar, Eliza, Marco & Trisjan](https://www.figma.com/proto/BcmZb4clafkTX1UM1GN3F2/Prototype-v3-Visual-Thinking-in-het-HBO?node-id=21%3A995&starting-point-node-id=21%3A995&scaling=scale-down)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
